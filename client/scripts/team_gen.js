@@ -15,7 +15,7 @@ Array.prototype.shuffle = function() {
 
 function studentsToTeams(teamNum) {
   for (var i = 1; i <= teamNum; i++) {//create divs for each team
-    $('.teams').append('<div class="team col-md-2 col-sm-3" data-teamid="'+i+'"><h3>Team '+i+'</h3></div>');
+    $('.teams').append('<div class="team col-md-2 col-sm-3 col-xs-6" data-teamid="'+i+'"><h3>Team '+i+'</h3></div>');
   };
   var teamNumber = 1;//set to 1 so we start with team 1
   for (var i = 0; i < gammaStudentArray.length; i++) {

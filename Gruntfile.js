@@ -13,6 +13,16 @@ module.exports = function(grunt) {
         },
         less: {
             development: {
+                options: {
+                    compress: false,
+                    yuicompress: false,
+                    optimization: 2,
+                    cleancss:false,
+                    strictUnits:false,
+                    strictMath: true,
+                    strictImports: true,
+                    ieCompat: false
+                },
                 files: {
                     "server/public/assets/styles/stylesheet.css": "client/styles/less/main.less" // destination file and source file
                 }
