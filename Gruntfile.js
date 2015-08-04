@@ -35,6 +35,14 @@ module.exports = function(grunt) {
                     "jquery/dist/jquery.min.map"
                 ],
                 dest: "server/public/vendors/"
+            },
+            jqueryui: {
+                expand: true,
+                cwd: "node_modules",
+                src: [
+                    "jquery-ui/jquery-ui.js"
+                ],
+                dest: "server/public/vendors/"
             }
         }
     });

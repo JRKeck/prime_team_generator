@@ -1,3 +1,21 @@
+var teamSize;//holds the number of teams needed
+var gammaStudentArray = [];//the cohort array
+
+//Shuffle the array
+Array.prototype.shuffle = function() {
+  var input = this;
+
+  for (var i = input.length-1; i >=0; i--) {
+
+    var randomIndex = Math.floor(Math.random()*(i+1));
+    var itemAtIndex = input[randomIndex];
+
+    input[randomIndex] = input[i];
+    input[i] = itemAtIndex;
+  }
+  return input;
+}
+
 $(document).ready(function($) {
   //Get students from json file and place them in array
   $.ajax({
@@ -17,15 +35,15 @@ $(document).ready(function($) {
     $('.student-request').removeClass('selected');//clear out old selection
     $(this).addClass('selected');//add selected class to button pressed
     teamSize = $(this).data('teamsize')//get number of teams from data attr
-    console.log("Button Clicked");
-    console.log(teamSize);
   });
 
   $('.student-request').on('click', function() {
     $('.student-request').removeClass('selected');//clear out old selection
     $('.team-request').removeClass('selected');//clear out old selection
     $(this).addClass('selected');//add selected class to button pressed
-    teamSize = (gammaStudentArray.length / $(this).data('teamsize'));//get number of teams by dividing class size by students per team
+    teamSize = (Math.round(gammaStudentArray.length / $(this).data('teamsize')));//get number of teams by dividing class size by students per team
+
+    console.log(teamSize);
   });
 
   $('.randomizer').on('click', function() {
@@ -39,27 +57,18 @@ $(document).ready(function($) {
       for (var i = 0; i < gammaStudentArray.length; i++) {
         if (teamNumber > teamSize){teamNumber = 1;}//Move back to first team if counter gets higher than number of teams
         $('[data-teamid="'+teamNumber+'"]').append('<p>'+gammaStudentArray[i]+'</p>');//Append Student to a team
-        $('[data-teamid="'+teamNumber+'"] p').last().hide().delay(100 * i).slideDown();//Hide and then show with a progressive fade
+        $('[data-teamid="'+teamNumber+'"] p').last().hide().delay(80 * i).slideDown();//Hide and then show with a progressive fade
         teamNumber++;//Switch to next team
       };
     }
   });
-});
-var teamSize;//holds the number of teams needed
-var gammaStudentArray = [];//the cohort array
 
-//Shuffle the array
-Array.prototype.shuffle = function() {
-  var input = this;
+  $(function() {
+      $( "#tabs" ).tabs();
+    });
 
-  for (var i = input.length-1; i >=0; i--) {
+});//End Ready
 
-    var randomIndex = Math.floor(Math.random()*(i+1));
-    var itemAtIndex = input[randomIndex];
 
-    input[randomIndex] = input[i];
-    input[i] = itemAtIndex;
-  }
-  return input;
-}
+
 

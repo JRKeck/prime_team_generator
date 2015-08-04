@@ -8,6 +8,8 @@
 
   <!-- jQuery -->
   <script src="/vendors/jquery/dist/jquery.min.js"></script>
+  <!-- jQuery UI -->
+  <script src="/vendors/jquery-ui/jquery-ui.js"></script>
   <!-- Project Script -->
   <script src="/assets/scripts/team_gen.min.js"></script>
   <!-- Bootstrap CSS -->
@@ -20,8 +22,12 @@
 <body>
   <div class="container">
     <h1>Prime Team Generator</h1>
-    <div>Choose the number of teams</div>
-    <div class="team-size">
+    <div id="tabs">
+    <ul class="tab-selector">
+      <li><a href="#tabs-1">Choose Number of Teams</a></li>
+      <li><a href="#tabs-2">Choose Number of Students</a></li>
+    </ul>
+    <div class="team-size" id="tabs-1">
       <button class="team-request btn btn-info" data-teamsize="2">2</button>
       <button class="team-request btn btn-info" data-teamsize="3">3</button>
       <button class="team-request btn btn-info" data-teamsize="4">4</button>
@@ -34,8 +40,7 @@
       <button class="team-request btn btn-info" data-teamsize="11">11</button>
       <button class="randomizer btn btn-success">Generate</button>
     </div>
-    <div>Choose the number of students per team</div>
-    <div class="team-size">
+    <div class="team-size" id="tabs-2">
       <button class="student-request btn btn-info" data-teamsize="2">2</button>
       <button class="student-request btn btn-info" data-teamsize="3">3</button>
       <button class="student-request btn btn-info" data-teamsize="4">4</button>
@@ -50,6 +55,7 @@
     </div>
     <div class="teams">
 
+    </div>
     </div>
   </div>
 </body>
