@@ -1,0 +1,39 @@
+.btn {
+  background-color: #fff;
+  padding: 10px;
+  font-size: 14px;
+  margin: 0 10px 10px 0;
+  border: 2px solid #000;
+  &.team-request {
+    width: 50px;
+  }
+  &.selected {
+    background-color: #07AA9E;
+    color: #fff;
+  }
+  &:focus {
+    outline: 5px auto #07AA9E;
+  }
+}
+
+.submit-area {
+  > div{
+    display: inline-block;
+    margin-right: 10px;
+    vertical-align: top;
+  }
+  .error-msg {
+    border: 2px solid #07AA9E;
+    color: #07AA9E;
+    padding: 10px;
+  }
+}
+
+.teams {
+  .team {
+    min-height: 200px;
+    p {
+      font-size: 18px;
+    }
+  }
+}

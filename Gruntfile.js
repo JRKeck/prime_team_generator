@@ -7,8 +7,25 @@ module.exports = function(grunt) {
                 banner: '/*! <%= pkg.name %> <%= grunt.template.today("yyyy-mm-dd") %> */\n'
             },
             build: {
-                src: 'client/scripts/client_script.js',
-                dest: 'server/public/assets/scripts/client_script.min.js'
+                src: 'client/scripts/team_gen.js',
+                dest: 'server/public/assets/scripts/team_gen.min.js'
+            }
+        },
+        less: {
+            development: {
+                options: {
+                    compress: false,
+                    yuicompress: false,
+                    optimization: 2,
+                    cleancss:false,
+                    strictUnits:false,
+                    strictMath: true,
+                    strictImports: true,
+                    ieCompat: false
+                },
+                files: {
+                    "server/public/assets/styles/stylesheet.css": "client/styles/less/main.less" // destination file and source file
+                }
             }
         },
         copy: {
@@ -28,21 +45,14 @@ module.exports = function(grunt) {
                     "jquery/dist/jquery.min.map"
                 ],
                 dest: "server/public/vendors/"
-            },
-            styles: {
-                expand: true,
-                cwd: "client",
-                src: [
-                    "styles/stylesheet.css"
-                ],
-                dest: "server/public/assets/"
             }
         }
     });
 
     grunt.loadNpmTasks('grunt-contrib-copy');
     grunt.loadNpmTasks('grunt-contrib-uglify');
+    grunt.loadNpmTasks('grunt-contrib-less');
 
     // Default task(s).
-    grunt.registerTask('default', ['copy', 'uglify']);
+    grunt.registerTask('default', ['copy', 'uglify', 'less']);
 };
