@@ -10,15 +10,14 @@
   "author": "Josh Keck",
   "license": "ISC",
   "dependencies": {
-    "body-parser": "^1.13.3",
     "bootstrap": "^3.3.5",
     "express": "^4.13.2",
+    "font-awesome": "^4.4.0",
     "grunt": "^0.4.5",
     "grunt-contrib-copy": "^0.8.0",
     "grunt-contrib-less": "^1.0.1",
     "grunt-contrib-uglify": "^0.9.1",
     "jquery": "^2.1.4",
-    "jquery-ui": "^1.10.5",
     "path": "^0.11.14"
   }
 }

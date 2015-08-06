@@ -1,56 +1,34 @@
-html {
-
-}
-.tab-selector {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  li {
-    display: inline-block;
-    padding:10px;
-    background-color: #5bc0de;
-    color: #fff ;
-    -webkit-border-radius: 4px;
-    -moz-border-radius: 4px;
-    border-radius: 4px;
-    margin-bottom: 10px;
-    &.ui-state-active{
-      background-color: #449D44;
-    }
-    a {
-      color: inherit;
-      text-decoration: none;
-      &:hover {
-        text-decoration: none;
-      }
-      &:focus {
-        outline: none;
-      }
-    }
-  }
-
-}
-.team-size{
-  .team-request, .student-request{
-    padding: 10px;
-    font-size: 14px;
+.btn {
+  background-color: #fff;
+  padding: 10px;
+  font-size: 14px;
+  margin: 0 10px 10px 0;
+  border: 2px solid #000;
+  &.team-request {
     width: 50px;
-    height: 50px;
-    &.selected {
-      background-color: #449D44;
-
-    }
-
   }
-  button {
-    margin-bottom: 10px;
+  &.selected {
+    background-color: #07AA9E;
+    color: #fff;
   }
-  .randomizer {
-    height: 50px;
-    display: block;
-
+  &:focus {
+    outline: 5px auto #07AA9E;
   }
 }
+
+.submit-area {
+  > div{
+    display: inline-block;
+    margin-right: 10px;
+    vertical-align: top;
+  }
+  .error-msg {
+    border: 2px solid #07AA9E;
+    color: #07AA9E;
+    padding: 10px;
+  }
+}
+
 .teams {
   .team {
     min-height: 200px;
