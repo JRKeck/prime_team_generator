@@ -24,7 +24,8 @@ module.exports = function(grunt) {
                     ieCompat: false
                 },
                 files: {
-                    "server/public/assets/styles/stylesheet.css": "client/styles/less/main.less" // destination file and source file
+                    "server/public/assets/styles/stylesheet.css": "client/styles/less/main.less",
+                    //"node_modules/font-awesome/less/"// destination file and source file
                 }
             }
         },
