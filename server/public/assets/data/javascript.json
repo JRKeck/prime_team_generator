@@ -1,0 +1,17 @@
+{
+  "javascript1": {
+    "name": "Array"
+  },
+  "javascript2": {
+    "name": "Object"
+  },
+  "javascript3": {
+    "name": "Semicolon"
+  },
+  "javascript4": {
+    "name": "app.js"
+  },
+  "javascript5": {
+    "name": "Syntax Error"
+  }
+}
